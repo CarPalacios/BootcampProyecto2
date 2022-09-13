@@ -3,11 +3,11 @@ server:
   
 spring:
   application:
-    name: micro-withdrawal
+    name: withdrawal-service
   data:
     mongodb:
       database: db_withdrawal
-        uri: mongodb://localhost:27017/withdrawal
+      uri: mongodb://localhost:27017/withdrawal
 
 eureka:
   client:

@@ -3,11 +3,11 @@ server:
     
 spring:
   application:
-    name: micro-client
+    name: client-service
   data:
     mongodb:
       database: db_client
-        uri: mongodb://localhost:27017/client
+      uri: mongodb://localhost:27017/client
 
 eureka:
   client:

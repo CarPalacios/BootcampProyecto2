@@ -3,11 +3,11 @@ server:
   
 spring:
   application:
-    name: micro-transaction
+    name: transaction-service
   data:
     mongodb:
       database: db_transaction
-        uri: mongodb://localhost:27017/transaction
+      uri: mongodb://localhost:27017/transaction
 
 eureka:
   client:

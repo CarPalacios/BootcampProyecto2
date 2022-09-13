@@ -3,11 +3,11 @@ server:
     
 spring:
   application:
-    name: micro-deposit
+    name: deposit-service
   data:
     mongodb:
       database: db_deposit
-        uri: mongodb://localhost:27017/deposit
+      uri: mongodb://localhost:27017/deposit
       
 eureka:
   client:

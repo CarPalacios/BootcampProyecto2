@@ -3,11 +3,11 @@ server:
   
 spring:
   application:
-    name: micro-purchase
+    name: purchase-service
   data:
     mongodb:
       database: db_purchase
-        uri: mongodb://localhost:27017/purchase
+      uri: mongodb://localhost:27017/purchase
 
 eureka:
   client:

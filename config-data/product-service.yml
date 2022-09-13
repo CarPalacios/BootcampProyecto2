@@ -7,7 +7,7 @@ spring:
   data:
     mongodb:
       database: db_product
-        uri: mongodb://localhost:27017/product
+      uri: mongodb://localhost:27017/product
 
 eureka:
   client:
