@@ -148,7 +148,7 @@ public class ProductServiceImpl extends CrudServiceImpl<Product, String>
   /** Mensaje si no existen productos. */
   public Mono<List<Product>> findAllFallback(Exception ex) {
 
-    log.info("Productos no encontrados.");
+    log.info("Products not found.");
 
     List<Product> list = new ArrayList<>();
 
@@ -164,7 +164,7 @@ public class ProductServiceImpl extends CrudServiceImpl<Product, String>
   /** Mensaje si no encuentra el producto. */
   public Mono<Product> productFallback(String productName, Exception ex) {
 
-    log.info("Producto {} no encontrado.", productName);
+    log.info("Products {} not found.", productName);
 
     return Mono.just(Product
         .builder()
@@ -177,7 +177,7 @@ public class ProductServiceImpl extends CrudServiceImpl<Product, String>
   /** Mensaje si falla el create. */
   public Mono<Product> createFallback(Product product, Exception ex) {
 
-    log.info("Producto {} no se pudo crear.", product.getProductName());
+    log.info("Product {} could not be created.", product.getProductName());
 
     return Mono.just(Product
         .builder()
@@ -190,7 +190,7 @@ public class ProductServiceImpl extends CrudServiceImpl<Product, String>
   /** Mensaje si falla el update. */
   public Mono<Product> updateFallback(Product product, String productName, Exception ex) {
 
-    log.info("Producto {} no encontrado para actualizar.", product.getProductName());
+    log.info("Product {} not found to update.", product.getProductName());
 
     return Mono.just(Product
         .builder()
@@ -203,7 +203,7 @@ public class ProductServiceImpl extends CrudServiceImpl<Product, String>
   /** Mensaje si falla el delete. */
   public Mono<Response> deleteFallback(String productName, Exception ex) {
 
-    log.info("Product {} no encontrado para eliminar.", productName);
+    log.info("Product {} not found to delete.", productName);
 
     return Mono.just(Response
         .builder()

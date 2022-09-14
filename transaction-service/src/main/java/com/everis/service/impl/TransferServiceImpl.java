@@ -94,7 +94,7 @@ public class TransferServiceImpl extends CrudServiceImpl<Transfer, String>
   /** Mensaje si falla el transfer. */
   public Mono<Withdrawal> createFallback(Transfer transfer, Exception ex) {
   
-    log.info("Transferencia de la cuenta {} hacia la cuenta {} no se pudo realizar, "
+    log.info("Transfer from account {} to account {} failed, "
         + "retornando fallback", transfer.getSendAccount(), transfer.getReceiveAccount());
   
     return Mono.just(Withdrawal

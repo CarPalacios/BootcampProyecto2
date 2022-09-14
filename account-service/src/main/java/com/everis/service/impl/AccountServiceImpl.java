@@ -138,7 +138,7 @@ public class AccountServiceImpl extends CrudServiceImpl<Account, String>
   /** Mensaje si no existen account. */
   public Mono<List<Account>> findAllFallback(Exception ex) {
 
-    log.info("Cuentas no encontradas.");
+    log.info("Accounts not found.");
 
     List<Account> list = new ArrayList<>();
 
@@ -154,7 +154,7 @@ public class AccountServiceImpl extends CrudServiceImpl<Account, String>
   /** Mensaje si no encuentra el account. */
   public Mono<Account> accountFallback(String accountNumber, Exception ex) {
 
-    log.info("Account {} no encontrado.", accountNumber);
+    log.info("Account {} not found.", accountNumber);
 
     return Mono.just(Account
         .builder()
@@ -167,7 +167,7 @@ public class AccountServiceImpl extends CrudServiceImpl<Account, String>
   /** Mensaje si falla el create. */
   public Mono<Account> createFallback(Account account, Exception ex) {
 
-    log.info("Cuenta {} no se pudo crear.", account.getAccountNumber());
+    log.info("Account {} could not be created.", account.getAccountNumber());
 
     return Mono.just(Account
         .builder()
@@ -181,7 +181,7 @@ public class AccountServiceImpl extends CrudServiceImpl<Account, String>
   /** Mensaje si falla el update. */  
   public Mono<Account> updateFallback(Account account, String accountNumber, Exception ex) { 
 
-    log.info("Cuenta {} no encontrada para actualizar.", account.getAccountNumber());
+    log.info("Account {} not found to update.", account.getAccountNumber());
 
     return Mono.just(Account
         .builder()
@@ -194,7 +194,7 @@ public class AccountServiceImpl extends CrudServiceImpl<Account, String>
   /** Mensaje si falla el delete. */
   public Mono<Response> deleteFallback(String accountNumber, Exception ex) {
 
-    log.info("Cuenta {} no encontrado para eliminar.", accountNumber);
+    log.info("Account {} not found to delete.", accountNumber);
 
     return Mono.just(Response
         .builder()

@@ -115,7 +115,7 @@ public class ClientServiceImpl extends CrudServiceImpl<Client, String>
   /** Mensaje si no existen clientes. */
   public Mono<List<Client>> findAllFallback(Exception ex) {
 
-    log.info("Clientes no encontrados, retornando fallback");
+    log.info("Clients not found, returning fallback");
 
     List<Client> list = new ArrayList<>();
 
@@ -131,7 +131,7 @@ public class ClientServiceImpl extends CrudServiceImpl<Client, String>
   /** Mensaje si no encuentra el cliente. */
   public Mono<Client> clientFallback(String identityNumber, Exception ex) {
 
-    log.info("Cliente con numero de identidad {} no encontrado.", identityNumber);
+    log.info("Client with identity number {} not found.", identityNumber);
 
     return Mono.just(Client
         .builder()
@@ -144,7 +144,7 @@ public class ClientServiceImpl extends CrudServiceImpl<Client, String>
   /** Mensaje si falla el create. */
   public Mono<Client> createFallback(Client client, Exception ex) {
 
-    log.info("Cliente con numero de identidad {} no se pudo crear.", client.getIdentityNumber());
+    log.info("Client with identity number {} could not be created.", client.getIdentityNumber());
 
     return Mono.just(Client
         .builder()
@@ -158,7 +158,7 @@ public class ClientServiceImpl extends CrudServiceImpl<Client, String>
   public Mono<Client> updateFallback(Client client,
       String identityNumber, Exception ex) {
 
-    log.info("Cliente con numero de identidad {} no encontrado para actualizar.",
+    log.info("Client with identity number {} not found to update.",
     		client.getIdentityNumber());
 
     return Mono.just(Client
@@ -172,7 +172,7 @@ public class ClientServiceImpl extends CrudServiceImpl<Client, String>
   /** Mensaje si falla el delete. */
   public Mono<Response> deleteFallback(String identityNumber, Exception ex) {
 
-    log.info("Cliente con numero de identidad {} no encontrado para eliminar.", identityNumber);
+    log.info("Client with identity number {} not found to delete.", identityNumber);
 
     return Mono.just(Response
         .builder()

@@ -108,7 +108,7 @@ public class TransactionServiceImpl extends CrudServiceImpl<Transaction, String>
   /** Mensaje si no existen transacciones. */
   public Mono<List<Transaction>> findAllFallback(Exception ex) {
     
-    log.info("Transacciones no encontradas, retornando fallback");
+    log.info("Transactions not found, returning fallback");
   
     List<Transaction> list = new ArrayList<>();
     
@@ -124,7 +124,7 @@ public class TransactionServiceImpl extends CrudServiceImpl<Transaction, String>
   /** Mensaje si no existen transacciones con ese numero de tarjeta. */
   public Mono<List<Transaction>> findAllCardFallback(String cardNumber, Exception ex) {
     
-    log.info("Transacciones no encontradas, retornando fallback");
+    log.info("Transactions not found, returning fallback");
   
     List<Transaction> list = new ArrayList<>();
     

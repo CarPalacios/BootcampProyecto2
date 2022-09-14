@@ -104,7 +104,7 @@ public class DepositServiceImpl extends CrudServiceImpl<Deposit, String>
   /** Mensaje si no existen depositos. */
   public Mono<List<Deposit>> findAllFallback(Exception ex) {
     
-    log.info("Depositos no encontradas, retornando fallback");
+    log.info("Deposits not found, returning fallback");
   
     List<Deposit> list = new ArrayList<>();
     
@@ -120,8 +120,8 @@ public class DepositServiceImpl extends CrudServiceImpl<Deposit, String>
   /** Mensaje si falla el create. */
   public Mono<Deposit> createFallback(Deposit deposit, Exception ex) {
   
-    log.info("Deposito con numero de cuenta {} no se pudo crear, "
-        + "retornando fallback", deposit.getAccount().getAccountNumber());
+    log.info("Deposit with account number {} could not be created, "
+        + "returning fallback", deposit.getAccount().getAccountNumber());
   
     return Mono.just(Deposit
         .builder()

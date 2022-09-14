@@ -401,7 +401,7 @@ public class PurchseServiceImpl extends CrudServiceImpl<Purchase, String>
   /** Mensaje si no existen purchase. */
   public Mono<List<Purchase>> findAllFallback(Exception ex) {
 
-    log.info("Compras no encontrados.");
+    log.info("Purchases not found.");
 
     List<Purchase> list = new ArrayList<>();
 
@@ -417,7 +417,7 @@ public class PurchseServiceImpl extends CrudServiceImpl<Purchase, String>
   /** Mensaje si no existen productos. */
   public Mono<List<Product>> findAllProductFallback(Exception ex) {
 
-    log.info("Productos no encontrados.");
+    log.info("Products not founds.");
 
     List<Product> list = new ArrayList<>();
 
@@ -433,7 +433,7 @@ public class PurchseServiceImpl extends CrudServiceImpl<Purchase, String>
   /** Mensaje si falla el create. */
   public Mono<Purchase> createFallback(Purchase purchase, Exception ex) {
 
-    log.info("Compra con numero de tarjeta {} no se pudo crear.", purchase.getCardNumber());
+    log.info("Purchase with card number {} could not be created.", purchase.getCardNumber());
 
     return Mono.just(Purchase
         .builder()
@@ -447,7 +447,7 @@ public class PurchseServiceImpl extends CrudServiceImpl<Purchase, String>
   public Mono<Purchase> updateFallback(Purchase purchase, String id,
       Exception ex) {
 
-    log.info("Compra con id {} no encontrado para actualizar.", purchase.getId());
+    log.info("Purchase with id {} not found to update.", purchase.getId());
 
     return Mono.just(Purchase
         .builder()
@@ -460,7 +460,7 @@ public class PurchseServiceImpl extends CrudServiceImpl<Purchase, String>
   /** Mensaje si falla el delete. */
   public Mono<Response> deleteFallback(String cardNumber, Exception ex) {
 
-    log.info("Compra con numero de tarjeta {} no encontrado para eliminar.", cardNumber);
+    log.info("Purchase with card number {} not found to delete.", cardNumber);
 
     return Mono.just(Response
         .builder()

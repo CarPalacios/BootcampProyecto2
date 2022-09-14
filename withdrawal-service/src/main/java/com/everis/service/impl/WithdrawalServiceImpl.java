@@ -116,7 +116,7 @@ public class WithdrawalServiceImpl extends CrudServiceImpl<Withdrawal, String>
   /** Mensaje si no existen retiros. */
   public Mono<List<Withdrawal>> findAllFallback(Exception ex) {
     
-    log.info("Retiros no encontradas, retornando fallback");
+    log.info("Withdrawals not found, returning fallback");
   
     List<Withdrawal> list = new ArrayList<>();
     
@@ -132,7 +132,7 @@ public class WithdrawalServiceImpl extends CrudServiceImpl<Withdrawal, String>
   /** Mensaje si falla el create. */
   public Mono<Withdrawal> createFallback(Withdrawal withdrawal, Exception ex) {
   
-    log.info("Retiro con numero de cuenta {} no se pudo crear, "
+    log.info("Withdrawal with account number {} could not be created, "
         + "retornando fallback", withdrawal.getAccount().getAccountNumber());
   
     return Mono.just(Withdrawal
