@@ -1,4 +1,4 @@
 FROM openjdk:8-alpine
-COPY "./target/customer-service-0.0.1-SNAPSHOT.jar" "appcustomer-service.jar"
+COPY "./target/client-service-0.0.1-SNAPSHOT.jar" "appclient-service.jar"
 EXPOSE 8090
-ENTRYPOINT ["java","-jar","appcustomer-service.jar"]
+ENTRYPOINT ["java","-jar","appclient-service.jar"]
