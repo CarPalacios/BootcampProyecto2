@@ -10,10 +10,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 /**
- * Clase Customer.
+ * Clase Client.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@Document(collection = "customer")
+@Document(collection = "client")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

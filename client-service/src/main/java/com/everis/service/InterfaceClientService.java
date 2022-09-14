@@ -6,7 +6,7 @@ import java.util.List;
 import reactor.core.publisher.Mono;
 
 /**
- * Interface de Metodos del Service Customer.
+ * Interface de Metodos del Service Client.
  */
 public interface InterfaceClientService extends InterfaceCrudService<Client, String> {
 
@@ -14,9 +14,9 @@ public interface InterfaceClientService extends InterfaceCrudService<Client, Str
 
   Mono<Client> findByIdentityNumber(String identityNumber);
 
-  Mono<Client> createClient(Client customer);
+  Mono<Client> createClient(Client client);
 
-  Mono<Client> updateClient(Client customer, String identityNumber);
+  Mono<Client> updateClient(Client client, String identityNumber);
 
   Mono<Response> deleteClient(String identityNumber);
 
