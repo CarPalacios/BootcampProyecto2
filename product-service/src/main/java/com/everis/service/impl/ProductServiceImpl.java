@@ -97,11 +97,6 @@ public class ProductServiceImpl extends CrudServiceImpl<Product, String>
     return productDatabase
         .zipWith(productModification, (a, b) -> {
 
-          if (b.getCondition().getCustomerTypeTarget() != null) {
-            a.getCondition().setCustomerTypeTarget(b.getCondition()
-                .getCustomerTypeTarget());
-          }
-
           a.getCondition().setHasMaintenanceFee(b.getCondition()
               .isHasMaintenanceFee());
           a.getCondition().setHasMonthlyTransactionLimit(b.getCondition()
